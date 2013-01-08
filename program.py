@@ -1,11 +1,12 @@
-#program.py
-
 from ctypes import *
+
 
 lib = cdll.LoadLibrary("./libffi-example.so")
 
 lib.example_init()
-x=lib.fibonacci_hs(42)
-print x
+
+for x in xrange(10):
+    print "Haskell fib(%d): %d" % (x, lib.fibonacci_hs(x))
+
 lib.example_exit()
 
