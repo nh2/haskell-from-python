@@ -15,3 +15,8 @@ clean:
 
 clean-all:
 	rm -f *.hi *.o *_stub.[ch] *.so
+
+
+# Runs the example Python program
+example: libffi-example.so
+	python program.py
